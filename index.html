@@ -159,6 +159,272 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/%E5%AF%BC%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="WA-ze">
+      <meta itemprop="description" content="记录生活、算法竞赛学习笔记，由Hexo+Github搭建。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alonse_wa的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E5%AF%BC%E6%95%B0/" class="post-title-link" itemprop="url">导数</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-11-04 12:26:35" itemprop="dateCreated datePublished" datetime="2024-11-04T12:26:35+08:00">2024-11-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-11-05 21:04:23" itemprop="dateModified" datetime="2024-11-05T21:04:23+08:00">2024-11-05</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="导数的定义"><a href="#导数的定义" class="headerlink" title="导数的定义"></a>导数的定义</h2><p>设函数 $f(x)$ 在点 $x_0$ 的某个邻域内有定义，当自变量 $x$ 在 $x_0$ 处有增量 $\Delta x$，点 $x + \Delta x$ 也在该邻域时，对应的函数取得增量 $\Delta y$。如果 $\Delta y$ 与 $\Delta x$ 之比当 $\Delta x \longrightarrow 0$ 时，极限存在，则称函数 $f(x)$ 在 $x_0$ 处可导（仅在 $x_0$ 这一点处，并不保证在所有点处），并称这个极限为函数 $f(x)$ 在点 $x_0$ 处的导数,记为 $f’(x_0)$ ，即：</p>
+<script type="math/tex; mode=display">
+f'(x)=\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x} =\lim_{x \to x_0}\frac{f(x)-f(x_0)}{x - x_0} =\lim_{\Delta x \to 0}\frac{f(x_0+\Delta x) - f(x_0)}{\Delta x}</script><p>对于一个函数来说,可导必定连续,连续<strong>不一定可导(没有定义)</strong></p>
+<h2 id="函数的求导法则"><a href="#函数的求导法则" class="headerlink" title="函数的求导法则"></a>函数的求导法则</h2><h3 id="常数和基本初等函数的导数公式"><a href="#常数和基本初等函数的导数公式" class="headerlink" title="常数和基本初等函数的导数公式"></a>常数和基本初等函数的导数公式</h3><script type="math/tex; mode=display">
+\begin{align}
+(C)' & = 0 & (x^\mu )' & = \mu x^{\mu - 1} \\
+(\sin x)' & = \cos x & (\cos x)' & = -\sin x\\
+(\tan x)' & = \sec^2x & (\cot x)' & = -\csc^2 x\\
+(\sec x)' & = \sec x\tan x &(\csc x)' & = -\csc x\cot x\\
+(a^x)' & = a^x\ln a (a>0,a\ne 1) & (e^x)' & = e^x\\
+(\log_{a}{x})' & = \frac{1}{x\ln a} & (\ln x)' & = \frac {1}{x}\\
+(\arcsin x)' & = \frac{1}{\sqrt{1-x^2} } &  (\arccos x)' & = -\frac{1}{\sqrt{1-x^2} }\\
+(\arctan x)' & = \frac{1}{1 + x^2} & (arccot \  {x})' & = -\frac{1}{1 + x^2}
+\end{align}</script><h2 id="例题"><a href="#例题" class="headerlink" title="例题:"></a>例题:</h2><h4 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h4><p>已知</p>
+<ul>
+<li>$f(x + y) = f(x)g(y) + f(y)g(x)$</li>
+<li>$f’(0) = g(0) = 1$</li>
+<li>$f(0) = g’(0) = 0$</li>
+</ul>
+<p>证明 $\forall x \in R$ ,有 $f’(x) = g(x)$</p>
+<h5 id="证明"><a href="#证明" class="headerlink" title="证明:"></a>证明:</h5><script type="math/tex; mode=display">
+\begin{align}
+
+ f'(x) & =  \lim_{y \to 0} \frac{f(x + y) - f(x)}{y}
+ \\ & =  \lim_{y \to 0}\frac{f(x)g(y) -f(x) + f(y)g(x)}{y}
+ \\ & =  f(x)\lim_{y \to 0}\frac{g(y) - 1}{y} + g(x)\lim_{y \to 0}\frac{f(y)}{y}  
+ \\ & =  f(x)\lim_{y \to 0}\frac{g(0+y) - g(0)}{y} + g(x)\lim_{y \to 0}\frac{f(0+y)-f(0)}{y}  
+ \\ & =  f(x)g'(0) +g(x)f'(0)
+ \\ & =  0+g(x)
+ \\ & =  g(x)
+
+\end{align}</script><h4 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h4><p>设 $f’(a)$ 存在, $f(a) &gt; 0$, 求 </p>
+<script type="math/tex; mode=display">
+\lim_{n \to \infty}\left ( \frac{f(a)}{f(a + \frac{1}{n})} \right ) ^n</script><h5 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h5><p>注意到当 ${x \to \infty}$ 时原式为 $(1)^\infty$ 型,所以我们需要尽可能将其转化为第二个重要极限</p>
+<script type="math/tex; mode=display">
+ \lim_{\triangle \to \infty} \left ( 1 + \frac{1}{\triangle }  \right )^\triangle  = e</script><p>的形式。</p>
+<p>解:</p>
+<script type="math/tex; mode=display">
+\begin{align}
+
+\lim_{n \to \infty}\left ( \frac{f(a)}{f(a + \frac{1}{n})} \right ) ^n & = \lim_{n \to \infty} \left [ { \left (1+ \frac{f(a)-f(a + \frac{1}{n})}{f(a + \frac{1}{n})} \right )}^{\left ( \frac{f(a + \frac{1}{n})}{f(a)-f(a + \frac{1}{n})} \right ) } \right ] ^{\left (\frac{f(a)-f(a + \frac{1}{n})}{f(a + \frac{1}{n})} \right )n}
+\\&=\lim_{n \to \infty} \left [ { \left (1+ \frac{f(a)-f(a + \frac{1}{n})}{f(a + \frac{1}{n})} \right )}^{\left ( \frac{f(a + \frac{1}{n})}{f(a)-f(a + \frac{1}{n})} \right ) } \right ] ^{\lim_{n \to \infty}\left (\frac{f(a)-f(a + \frac{1}{n})}{f(a + \frac{1}{n})} \right )n}
+\\&=e^{\lim_{n \to \infty} \left (\frac{f(a)-f(a + \frac{1}{n})}{f(a + \frac{1}{n})} n\right ) }
+\\&=e^{\lim_{n \to \infty} \frac{f(a)-f(a+\frac{1}{n} )}{\frac{1}{n} }\times {\frac{1}{f(a+\frac{1}{n} )} }   }
+\\&=e^{-\frac{f'(a)}{f(a)} }
+\end{align}</script>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/%E6%9E%81%E9%99%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="WA-ze">
+      <meta itemprop="description" content="记录生活、算法竞赛学习笔记，由Hexo+Github搭建。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alonse_wa的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E6%9E%81%E9%99%90/" class="post-title-link" itemprop="url">极限</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-11-04 12:21:16" itemprop="dateCreated datePublished" datetime="2024-11-04T12:21:16+08:00">2024-11-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-11-05 20:43:22" itemprop="dateModified" datetime="2024-11-05T20:43:22+08:00">2024-11-05</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="数列的极限"><a href="#数列的极限" class="headerlink" title="数列的极限"></a>数列的极限</h2><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>设 $\{x_n\}$ 为一数列,如果存在常数 $a$ ,对于任意给定的正数 $\varepsilon \text{(无论它有多小)}$ ,总存在正整数 $N$, 使得当 $n&gt;N$ 时,不等式</p>
+<script type="math/tex; mode=display">
+ \left | x_n - a \right | < \varepsilon</script><p>都成立,就称常数 $a$ 是数列 $\{x_n\}$ 的<strong>极限</strong>,或者称数列 $\{x_n\}$ 收敛于 $a$,记作</p>
+<script type="math/tex; mode=display">
+\lim_{n \to \infty}x_n = a</script><p>或者</p>
+<script type="math/tex; mode=display">
+x_n \to a \ \ \left ( n \to \infty \right )</script><p>数列极限 $\lim_{n \to \infty} x_n = a$ 的定义可以表达为</p>
+<script type="math/tex; mode=display">
+\lim_{n \to \infty} x_n = a \Leftrightarrow \forall \varepsilon > 0, \exist \text{正整数} N \text{,当} n > N \text{时，有} |x_n - a| < \varepsilon</script><h2 id="函数的极限"><a href="#函数的极限" class="headerlink" title="函数的极限"></a>函数的极限</h2><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>对于 $x \to x_0$ 类型</p>
+<script type="math/tex; mode=display">
+\lim_{x \to x_0} f(x) =A \Leftrightarrow \forall \varepsilon >0,\exists \delta >0,\text{当} 0 < |x-x_0|< \delta \text{时,有} |f(x) - A | < \varepsilon</script><p>对于 $x \to \infty$ 类型</p>
+<script type="math/tex; mode=display">
+\lim_{x \to \infty} f(x) =A \Leftrightarrow \forall \varepsilon >0,\exists X >0,\text{当} |x| > X \text{时,有} |f(x) - A | < \varepsilon</script><p>注意：</p>
+<script type="math/tex; mode=display">
+\lim_{x \to x_0} f(x) =A \Leftrightarrow \lim_{x \to x_o^+}f(x) =A \  \& \lim_{x \to x_o^-}f(x) =A \\
+
+若\lim_{x \to x_o^+}f(x) =A \  \ne \lim_{x \to x_o^-}f(x) =A \  则 \lim_{x \to x_0}f(x)不存在</script><h2 id="无穷小与无穷大"><a href="#无穷小与无穷大" class="headerlink" title="无穷小与无穷大"></a>无穷小与无穷大</h2><p>Notes!:无穷小和无穷大是一种<strong>变量</strong>,不是具体的数值。</p>
+<ul>
+<li>无穷小<strong>以数0为极限的变量，无限接近于0</strong></li>
+<li>无穷大是<strong>超出任何有界值的数值</strong></li>
+<li><h3 id="无穷小的定义"><a href="#无穷小的定义" class="headerlink" title="无穷小的定义"></a>无穷小的定义</h3></li>
+</ul>
+<p>如果函数 $f(x)$ 当 $x \to x_0$ (或 $x \to \infty$)时的极限为 $0$ ,那么称函数 $f(x)$ 为当 $x \to x_0$ (或 $x \to \infty$)时的无穷小。</p>
+<h3 id="无穷大的定义"><a href="#无穷大的定义" class="headerlink" title="无穷大的定义"></a>无穷大的定义</h3><p>如果当 $x \to x_0$ (或 $x \to \infty$)时,对应的函数值的<strong>绝对值</strong> $|f(x)|$ 可以大于预先指定的任何很大的正数 $M$ ,就称函数 $f(x)$ 是当 $x \to x_0$ (或 $x \to \infty$)时的无穷大。</p>
+<h3 id="等价无穷小"><a href="#等价无穷小" class="headerlink" title="等价无穷小"></a>等价无穷小</h3><p><strong>非常重要！！！！</strong></p>
+<script type="math/tex; mode=display">
+\lim_{x \to 0} \left\{\begin{matrix}
+ \left ( 1 + x \right )^\propto \sim \propto x 
+ \\1 - \cos x\sim \frac{1}{2} x^2
+ \\x\sim \sin x\sim \arcsin x\sim \tan x\sim \arctan x
+\\x\sim \ln{(1 + x)}\sim \left ( e^{x}  - 1 \right )  
+\end{matrix}\right.</script><h2 id="极限的运算法则"><a href="#极限的运算法则" class="headerlink" title="极限的运算法则"></a>极限的运算法则</h2><h3 id="适用前提！！！拆开后形成的函数均存在极限！！"><a href="#适用前提！！！拆开后形成的函数均存在极限！！" class="headerlink" title="适用前提！！！拆开后形成的函数均存在极限！！"></a>适用前提！！！拆开后形成的函数均存在极限！！</h3><p>定理</p>
+<ol>
+<li><p><strong>有限个</strong>无穷小之和是无穷小</p>
+</li>
+<li><p><strong>有界函数</strong>与无穷小的乘积是无穷小</p>
+</li>
+<li><p>若 $\lim f(x) =A,\lim g(x) = B$ 那么</p>
+<ul>
+<li>$\lim [f(x) \pm g(x)]=\lim f(x) \pm \lim g(x)=A\pm B$</li>
+<li>$\lim [f(x) \cdot g(x)]=\lim f(x) \cdot \lim g(x)=A\cdot B$</li>
+<li>$\lim \frac{f(x)}{g(x)} = \frac{\lim f(x)}{\lim g(x)} = \frac{A}{B}[B \ne 0]$</li>
+</ul>
+</li>
+<li>若 $\varphi (x) \ge \psi (x)$,$\lim \varphi (x) =A ,\lim \psi (x)=B$,则$A \ge B$(用$f(x) = \varphi (x) - \psi (x)$加上定理3推导)</li>
+<li><strong>复合函数的极限运算法则</strong><script type="math/tex; mode=display">
+若\lim_{x \to x_0} g(x) = u_0 \ \  \& \ \lim_{u \to u_0}f(u) = A \\
+则\lim_{x\to x_0}f\left [ g(x)\right ] =\lim_{u\to u_0}f(u) = A</script></li>
+</ol>
+<h2 id="极限存在法则"><a href="#极限存在法则" class="headerlink" title="极限存在法则"></a>极限存在法则</h2><p>准则1：<strong>夹逼定理</strong></p>
+<script type="math/tex; mode=display">
+若在定义域内存在 g(x) \le f(x) \le h(x)\\
+且\lim_{x\to x_0/\infty}g(x) = A,\lim_{x\to x_0/\infty}h(x) = A\\
+那么\lim_{x\to x_0/\infty}f(x) 存在,且等于 A</script><p>准则2：<strong>单调有界数列必有极限</strong></p>
+<p>准则2’：设函数 $f(x)$ 在点 $x_0$ 的<strong>某个左邻域内单调并且有界</strong>,则 $f(x)$ 在 $x_0$ 的左极限 $f(x_0^-)$ 必定存在。</p>
+<h3 id="两个重要极限"><a href="#两个重要极限" class="headerlink" title="两个重要极限"></a>两个重要极限</h3><ol>
+<li><script type="math/tex; mode=display">
+\lim_{\Box  \to 0} \frac{\sin \Box }{\Box }  = 1</script></li>
+<li><script type="math/tex; mode=display">
+\lim_{\triangle \to \infty} \left ( 1 + \frac{1}{\triangle }  \right )^\triangle  = e \\ 
+or \\
+\lim_{\Box \to 0} \left ( 1 + \Box   \right )^{\frac{1}{\Box } }  = e</script></li>
+</ol>
+<h2 id="无穷小的比较"><a href="#无穷小的比较" class="headerlink" title="无穷小的比较"></a>无穷小的比较</h2><ul>
+<li>如果 $\lim  \frac{\beta }{\alpha }  = 0$ ，那么 $\beta$ 是比 $\alpha$ <strong>高阶</strong>的无穷小，记作 $\beta = o(\alpha)$</li>
+<li>如果 $\lim  \frac{\beta }{\alpha }  = \infty$ ，那么 $\beta$ 是比 $\alpha$ <strong>低阶</strong>的无穷小。</li>
+<li>如果 $\lim  \frac{\beta }{\alpha }  = C \ne 0$ ，那么 $\beta$ 和 $\alpha$ 是<strong>同价</strong>无穷小。</li>
+<li>如果 $\lim  \frac{\beta }{\alpha  ^ k}  = C \ne 0$ ，那么 $\beta$ 是关于 $\alpha$ 的 $k$ 价无穷小。</li>
+<li>如果 $\lim  \frac{\beta }{\alpha }  = 1$ ，那么 $\beta$ 和 $\alpha$ 是<strong>等价</strong>无穷小。</li>
+</ul>
+<h2 id="函数的连续性和间断点"><a href="#函数的连续性和间断点" class="headerlink" title="函数的连续性和间断点"></a>函数的连续性和间断点</h2><p>若 $f(x)$ 在点 $x_0$ 处连续，则需满足下面三个条件</p>
+<ul>
+<li>$f(x)$ 在 $x_0$ 处有意义</li>
+<li>$f(x)$ 在 $x_0$ 处的极限存在</li>
+<li>$\lim_{x \to x_0} f(x) = f(x_0)$</li>
+</ul>
+<p>其中第三条有等价形式</p>
+<script type="math/tex; mode=display">
+\lim_{x \to x_0} f(x) = f(x_0) \Leftrightarrow \lim_{x \to x_0^+} f(x) = f(x_0) \ \& \ \lim_{x \to x_0^-} f(x) = f(x_0)</script><h4 id="间断点的定义及其分类"><a href="#间断点的定义及其分类" class="headerlink" title="间断点的定义及其分类"></a>间断点的定义及其分类</h4><p>定义：</p>
+<p>在上述三个(判断函数的连续性)条件中至少一项不成立，则称点 $x_0$ 为函数 $f(x)$ 的<strong>不连续点</strong>或<strong>间断点</strong>。</p>
+<script type="math/tex; mode=display">
+间断点
+\left\{\begin{matrix}\text{第一类间断点}
+\left\{\begin{matrix}\text{可去间断点} f(x^+) = f(x^-)
+ \\跳跃间断点 f(x^+) \ne f(x^-)
+
+\end{matrix}\right.
+ \\\text{第二类间断点}
+ \left\{\begin{matrix}\text{无穷间断点}f(x_0) = \infty
+ \\\text{振荡间断点}\  例如\lim_{x\to 0}\sin \frac{1}{x}
+
+\end{matrix}\right.
+
+\end{matrix}\right.</script><h2 id="习题："><a href="#习题：" class="headerlink" title="习题："></a>习题：</h2>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/CF984-Div3%E9%A2%98%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -712,75 +978,11 @@ a^T_{ji} = a_{ij}  \ (i = 1,2,...,n;j = 1,2,...,m)</script></li>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="WA-ze">
-      <meta itemprop="description" content="记录生活、算法竞赛学习笔记，由Hexo+Github搭建。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Alonse_wa的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-10-31 21:48:36 / 修改时间：21:44:18" itemprop="dateCreated datePublished" datetime="2024-10-31T21:48:36+08:00">2024-10-31</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -845,12 +1047,12 @@ a^T_{ji} = a_{ij}  \ (i = 1,2,...,n;j = 1,2,...,m)</script></li>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
@@ -940,44 +1142,56 @@ a^T_{ji} = a_{ij}  \ (i = 1,2,...,n;j = 1,2,...,m)</script></li>
 
 <script>
   if (typeof MathJax === 'undefined') {
+    //window.MathJax = {
+    //  loader: {
+    //
+    //      load: ['[tex]/mhchem'],
+    //
+    //    source: {
+    //      '[tex]/amsCd': '[tex]/amscd',
+    //      '[tex]/AMScd': '[tex]/amscd'
+    ////    }
+    //  },
+    //  tex: {
+    //    inlineMath: {'[+]': [['$', '$']]},
+    //
+    //      packages: {'[+]': ['mhchem']},
+    //
+    //    tags: 'ams'
+    //  },
+    //  options: {
+    //    renderActions: {
+    //      findScript: [10, doc => {
+    //        document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+    //          const display = !!node.type.match(/; *mode=display/);
+    //          const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+    //          const text = document.createTextNode('');
+    //          node.parentNode.replaceChild(text, node);
+    //          math.start = {node: text, delim: '', n: 0};
+    //          math.end = {node: text, delim: '', n: 0};
+    //          doc.math.push(math);
+    //        });
+    //      }, '', false],
+    //      insertedScript: [200, () => {
+    //        document.querySelectorAll('mjx-container').forEach(node => {
+    //          let target = node.parentNode;
+    //          if (target.nodeName.toLowerCase() === 'li') {
+    //            target.parentNode.classList.add('has-jax');
+    //          }
+    //        });
+    //      }, '', false]
+    //    }
+    //  }
+    //};
     window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
       }
     };
     (function () {
       var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML';
       script.defer = true;
       document.head.appendChild(script);
     })();
