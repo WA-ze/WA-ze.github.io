@@ -159,7 +159,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/%E5%AF%BC%E6%95%B0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/%E5%AF%BC%E6%95%B0%E5%92%8C%E5%BE%AE%E5%88%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -173,7 +173,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E5%AF%BC%E6%95%B0/" class="post-title-link" itemprop="url">导数</a>
+            <a href="/%E5%AF%BC%E6%95%B0%E5%92%8C%E5%BE%AE%E5%88%86/" class="post-title-link" itemprop="url">导数和微分</a>
         </h2>
 
         <div class="post-meta">
@@ -190,7 +190,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-11-05 21:04:23" itemprop="dateModified" datetime="2024-11-05T21:04:23+08:00">2024-11-05</time>
+                <time title="修改时间：2024-11-05 23:05:57" itemprop="dateModified" datetime="2024-11-05T23:05:57+08:00">2024-11-05</time>
               </span>
 
           
@@ -217,7 +217,12 @@ f'(x)=\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x} =\lim_{x \to x_0}\frac{f(x)
 (\log_{a}{x})' & = \frac{1}{x\ln a} & (\ln x)' & = \frac {1}{x}\\
 (\arcsin x)' & = \frac{1}{\sqrt{1-x^2} } &  (\arccos x)' & = -\frac{1}{\sqrt{1-x^2} }\\
 (\arctan x)' & = \frac{1}{1 + x^2} & (arccot \  {x})' & = -\frac{1}{1 + x^2}
-\end{align}</script><h2 id="例题"><a href="#例题" class="headerlink" title="例题:"></a>例题:</h2><h4 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h4><p>已知</p>
+\end{align}</script><h2 id="函数的微分"><a href="#函数的微分" class="headerlink" title="函数的微分"></a>函数的微分</h2><h4 id="微分的定义"><a href="#微分的定义" class="headerlink" title="微分的定义"></a>微分的定义</h4><p>设函数 $y=f(x)$ 在某区间内有定义， $x_0$ 及 $x_0 + \Delta x$ 在这区间内,如果函数的增量</p>
+<script type="math/tex; mode=display">
+\Delta y=f(x_0 + \Delta x) - f(x_0)</script><p>可表示为</p>
+<script type="math/tex; mode=display">
+\Delta y = A\Delta x + o(\Delta x),</script><p>其中 $A$ <strong>是不依赖于</strong> $\Delta x$ <strong>的常数</strong>,那么称函数 $y=f(x)$ 在点 $x_0$ 是可微的,而 $A\Delta x$ 叫做函数 $y = f(x)$ 在点 $x_0$ 相应于自变量增量 $\Delta x$ 的微分，记作 $dy$,即 $dy = A\Delta x$</p>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题:"></a>例题:</h2><h4 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h4><p>已知</p>
 <ul>
 <li>$f(x + y) = f(x)g(y) + f(y)g(x)$</li>
 <li>$f’(0) = g(0) = 1$</li>
